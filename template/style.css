@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    background-color: blue;
+}
+
+form {
+    padding-top: 20px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.a:hover {
+    background-color: rgba(0, 102, 255, 0.349);
+}
+
+button:hover {
+    background-color: blue;
+}
+
+.carousel-caption h3,
+.carousel-caption p {
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
