@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Sign Up</title>
+    <title>Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>title</title>
@@ -10,13 +10,13 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <style>
-        body {
-            background-color: blue;
-            background-image: url("./img/food_background.png");
-            opacity: 0.9;
+        /* Make the image fully responsive */
+        
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
         }
     </style>
-
 </head>
 
 <body>
@@ -50,29 +50,42 @@
     </nav>
 
     <div class="container">
-
-        <form method="POST" action="">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" class="form-control" name="username" placeholder="Enter Username">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/jollof.jpg" alt="Jollof Rice" width="1100" height="500">
+                    <div class="carousel-caption">
+                        <h3>Jollof Rice</h3>
+                        <p>The epitome of rice!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/Spring-rolls.jpg" alt="Spring Rolls" width="1100" height="500">
+                    <div class="carousel-caption">
+                        <h3>Spring Rolls</h3>
+                        <p>Enjoy every bite!</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/garlic-prawns.jpg" alt="Garlic Prawns" width="1100" height="500">
+                    <div class="carousel-caption">
+                        <h3>Garlic Prawns</h3>
+                        <p>simply delicious!</p>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" name="email" placeholder="Enter Email">
-            </div>
-            <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" name="password" placeholder="Enter Password">
-            </div>
-            <div class="form-group">
-                <label for="pwd">Re-Enter Password:</label>
-                <input type="password" class="form-control" name="passwordMatch" placeholder="Re-Enter Password">
-            </div>
-
-            <button type="submit" class="btn btn-default">Sign Up</button>
-            <a href="LoginPage.html" class="btn btn-info" role="button">Login</a>
-        </form>
-
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
     </div>
     <footer style="padding-top:30px;">
         <div class="container">
@@ -83,6 +96,7 @@
             </div>
         </div>
     </footer>
+
     <script type="text/javascript " src="js/jquery.min.js "></script>
     <script type="text/javascript " src="js/popper.min.js "></script>
     <script type="text/javascript " src="js/bootstrap.min.js "></script>
