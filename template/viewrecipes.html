@@ -98,7 +98,34 @@
                 </div>
             </div>
         </div>
-
+        <form action="" id="createfood-form" class="col-sm-12">
+            <div class="container">
+                <p class='h3' style="padding-bottom:25px">Create Recipe</p>
+                <div class="form-control row">
+                    <label for="recipe-title" class="col-sm-2 col-form-label mr-2">Title: </label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="recipe-title" name="recipe_title" placeholder="Recipe Title">
+                    </div>
+                </div>
+                <div class="form-control row">
+                    <label for="recipe-img" class="col-sm-2 col-form-label mr-2">Add Image: </label>
+                    <div class="col-sm-9">
+                        <input type="file" class="form-control" id="recipe-img" name="recipe-img">
+                    </div>
+                </div>
+                <div class="form-control row">
+                    <label for="Description" class="col-sm-2 col-form-label mr-2">Description: </label>
+                    <div class="col-sm-9">
+                        <textarea class="form-control" id="Description" name="Description" col="30" rows="10"> </textarea>
+                    </div>
+                </div>
+                <div class="form-control row">
+                    <div class="col-sm-3" style="margin:auto;">
+                        <button type="submit" class="btn btn-default">Add Recipe</button>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
     <footer style="padding-top:30px;">
         <div class="container">
