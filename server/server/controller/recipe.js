@@ -40,7 +40,7 @@ class Recipe {
         recipes[i].ingredients = req.body.ingredients;
         recipes[i].directions = req.body.directions;
         return res.json({
-          recipes,
+          recipes: recipes[i],
           message: 'success',
           error: false
         });
