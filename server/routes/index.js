@@ -1,9 +1,11 @@
-const express = require('express');
-const router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+import Recipe from '../controller/recipe';
 
-module.exports = router;
+export default (app) => {
+  app.get('/api/recipes', Recipe.getRecipe);
+  app.post('/api/recipes', Recipe.createRecipe);
+  app.put('/api/recipes/:recipeId', Recipe.updateRecipes);
+  app.delete('/api/recipes/:recipeId', Recipe.removeRecipes);
+  app.get('/api/recipes/:recipeId', Recipe.retrieveRecipes);
+};
+
