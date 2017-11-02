@@ -1,12 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
-  const Recipes = sequelize.define('Recipes', {
+  const Favorite = sequelize.define('Users', {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false,
+      defaultValue: false,
     },
     ingredients: {
       type: DataTypes.STRING,
@@ -19,25 +20,19 @@ module.exports = (sequelize, DataTypes) => {
     image: {
       type: DataTypes.STRING,
       allowNull: true,
-    },
-    // userId: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   references: {
-    //     model: 'Users',
-    //     key: 'id',
-    //   },
-    //   onDelete: 'CASCADE',
-    //   onUpdate: 'CASCADE',
-    // },
+    }
   });
 
-  Recipes.associate = (models) => {
-    Recipes.belongsTo(models.Users, {
-      foreignKey: 'recipeId',
+  Favorite.associate = (models) => {
+    Favorite.belongsToMany(models.Recipes, {
+      foreignKey: 'favoriteId',
+      as: 'Favorites',
+    });
+    Favorite.belongsTo(models.Users, {
+      foreignKey: 'userId',
       onDelete: 'CASCADE',
     });
   };
 
-  return Recipes;
+  return Favorite;
 };

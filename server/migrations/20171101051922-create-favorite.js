@@ -1,12 +1,11 @@
-'use strict';
 module.exports = {
-  up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Recipes', {
+  up: (queryInterface, Sequelize) =>
+    queryInterface.createTable('Favorite', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       name: {
         type: Sequelize.STRING,
@@ -14,7 +13,7 @@ module.exports = {
       },
       description: {
         type: Sequelize.STRING,
-        allowNull: false,
+        defaultValue: false,
       },
       ingredients: {
         type: Sequelize.STRING,
@@ -40,15 +39,13 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
-    });
-  },
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Recipes');
-  }
+    }),
+  down: queryInterface =>
+    queryInterface.dropTable('Favorite'),
 };

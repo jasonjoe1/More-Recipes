@@ -1,11 +1,14 @@
+import User from '../controllers/userController';
+import Recipe from '../controllers/recipeController';
 
-import Recipe from '../controller/recipe';
+module.exports = (app) => {
+  app.get('/api', (req, res) => res.status(200).send({
+    message: 'Welcome to More Recipes!',
+  }));
 
-export default (app) => {
-  app.get('/api/recipes', Recipe.getRecipe);
+  app.post('/api/users/signup', User.signUp);
+  app.post('/api/users/signin', User.signIn);
   app.post('/api/recipes', Recipe.createRecipe);
-  app.put('/api/recipes/:recipeId', Recipe.updateRecipes);
-  app.delete('/api/recipes/:recipeId', Recipe.removeRecipes);
-  app.get('/api/recipes/:recipeId', Recipe.retrieveRecipes);
+  // app.get('/api/recipes', Recipe.list);
 };
 
